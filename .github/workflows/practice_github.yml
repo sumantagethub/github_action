@@ -8,10 +8,13 @@ jobs:
     runs-on: [self-hosted]
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      - name: CMD Test
-        shell: cmd
+      - name: Run a one-line script
+        run: echo "Hello, world!"
+
+      - name: Run a multi-line script
         run: |
-          echo Hello World
-          echo Second Line
+          echo "Add other actions to build,"
+          echo "test, and deploy your project."
