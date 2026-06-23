@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: E-5CG5321YYZ
+    runs-on: [self-hosted]
 
     steps:
       - uses: actions/checkout@v4
