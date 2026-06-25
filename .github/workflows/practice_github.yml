@@ -14,7 +14,14 @@ jobs:
       - name: Run a one-line script
         run: echo "Hello, world!"
 
-      - name: Run a multi-line script
-        run: |
-          echo "Add other actions to build,"
-          echo "test, and deploy your project."
+      - name: azure login
+        run: az login --service-pricipal --username f2095b87-de42-4cc6-9603-85bf6a5ecae6 --password f2095b87-de42-4cc6-9603-85bf6a5ecae6
+      - name: Terraform init
+        run: terraform init
+      - name: Terraform Validate
+        run: terraform validate
+      - name: Terraform plan
+        run: terraform plan
+      - name: Terraform apply
+        run: terraform apply -auto-approve
+        
