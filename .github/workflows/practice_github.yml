@@ -15,7 +15,7 @@ jobs:
         run: echo "Hello, world!"
 
       - name: azure login
-        run: az login --service-principal --username f2095b87-de42-4cc6-9603-85bf6a5ecae6 --password f2095b87-de42-4cc6-9603-85bf6a5ecae6
+        run: az login az login --service-pricipal --username f2095b87-de42-4cc6-9603-85bf6a5ecae6 --password yrV8Q~1ANlabpp-KGcK2C2aqhRx3YGm3XUxwHbxq
       - name: Terraform init
         run: terraform init
       - name: Terraform Validate
