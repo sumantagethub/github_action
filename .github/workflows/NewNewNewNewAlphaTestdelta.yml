@@ -20,6 +20,10 @@ jobs:
           Get-Location
           Get-ChildItem -Force
           Get-ChildItem -Recurse -Filter *.tf
+          - name: Show Terraform Files
+            run: |
+              Write-Host "===== main.tf ====="
+              Get-Content main.tf
 
       - name: Terraform Init
         run: terraform init
