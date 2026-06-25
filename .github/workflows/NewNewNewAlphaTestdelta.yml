@@ -13,7 +13,7 @@ jobs:
 
       - name: Azure Login
         run: |
-          az login --service-principal --username ${{ secrets.AZURE_CLIENT_ID }} --password ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
+          az login --service-principal --username 033c042d-e6cc-4399-91cf-b93b7bd5dcba --password yrV8Q~1ANlabpp-KGcK2C2aqhRx3YGm3XUxwHbxq --tenant 4611c619-c77c-404a-b26f-b286f3681168
 
       - name: Debug Workspace
         run: |
