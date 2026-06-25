@@ -18,11 +18,15 @@ jobs:
         run:  az login --service-principal --username 033c042d-e6cc-4399-91cf-b93b7bd5dcba --password yrV8Q~1ANlabpp-KGcK2C2aqhRx3YGm3XUxwHbxq --tenant 4611c619-c77c-404a-b26f-b286f3681168
       - name: Terraform init
         run: terraform init
+        working-directory: terraform
       - name: Terraform Validate
         run: terraform validate
+        working-directory: terraform
       - name: Terraform plan
         run: terraform plan
+        working-directory: terraform
       - name: Terraform apply
         run: terraform apply -auto-approve
+        working-directory: terraform
         
         
