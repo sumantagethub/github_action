@@ -1,0 +1,43 @@
+name: Terraform Deployment
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          client-id: "033c042d-e6cc-4399-91cf-b93b7bd5dcba"
+          client-secret: "yrV8Q~1ANlabpp-KGcK2C2aqhRx3YGm3XUxwHbxq"
+          tenant-id: "4611c619-c77c-404a-b26f-b286f3681168"
+          subscription-id: "7f5d9e48-dc3a-4e43-89ee-2f65015f2837"
+          enable-AzPSSession: true
+
+      - name: Verify Azure Login
+        run: az account show
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
