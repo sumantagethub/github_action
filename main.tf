@@ -15,6 +15,6 @@ provider "azurerm" {
 
 
 resource "azurerm_resource_group" "rgs"{
-mame="gitgubaction"
+name="gitgubaction"
 location="centralindia"
 }
